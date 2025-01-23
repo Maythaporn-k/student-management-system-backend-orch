@@ -22,7 +22,10 @@ jobs:
         go-version: '1.20'
 
     - name: Build
-      run: go build -v /orch
+      run: cd /orch && go build -v 
 
     - name: Test
-      run: go test -v /orch
+      run: cd /orch &&  go test -v 
+
+    - name: Run
+      run: cd /orch &&  go run main.go 
