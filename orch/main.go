@@ -10,22 +10,25 @@ import (
 func main() {
 	app := fiber.New()
 
-	// *set content type
+	// Set content type for all responses
 	app.Use(func(c *fiber.Ctx) error {
 		c.Set("Content-Type", "application/json")
 		return c.Next()
 	})
 
-	// middleware
+	// CORS middleware
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://maythaporn-k.github.io/student-management-system-backend-orch/",
+		AllowOrigins: "https://maythaporn-k.github.io",
 		AllowMethods: "GET,POST,PUT,DELETE",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
+
+	// Routes
 	app.Get("/orch/student-list", handlers.StudentList)
 	app.Post("/orch/create-user", handlers.CreateUser)
 	app.Delete("/orch/delete-user", handlers.DeleteUser)
 	app.Put("/orch/edit-user", handlers.EditUser)
 
+	// Start server
 	app.Listen(":3001")
 }
