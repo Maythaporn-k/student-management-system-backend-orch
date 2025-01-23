@@ -18,7 +18,7 @@ func main() {
 
 	// middleware
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://maythaporn-k.github.io/orch",
+		AllowOrigins: "https://maythaporn-k.github.io/student-management-system-backend-orch/",
 		AllowMethods: "GET,POST,PUT,DELETE",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
