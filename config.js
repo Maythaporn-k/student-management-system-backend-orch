@@ -6,10 +6,10 @@ export default class config {
   }
 
   static getOrchUrl() {
-    return "http://localhost:3001/orch";
+    return "http://localhost:8001/orch";
   }
 
   static getCoreUrl() {
-    return "http://localhost:3002/core";
+    return "http://localhost:8002/core";
   }
 }
