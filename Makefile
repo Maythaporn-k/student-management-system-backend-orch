@@ -1,10 +1,15 @@
 # Targets
-.PHONY: orch  create-branch create-branch-from-main
+.PHONY: orch orch-local create-branch create-branch-from-main
 
 # Run the Orchestrator service
 orch:
-	@echo "Running Orchestrator service on branch $(GIT_BRANCH)"
+	@echo "Running Orchestrator service on branch $(shell git rev-parse --abbrev-ref HEAD)"
 	cd app && go run main.go
+
+# Run the Orchestrator service locally
+orch-local:
+	@echo "Running Orchestrator service locally on branch $(shell git rev-parse --abbrev-ref HEAD)"
+	cd app && PORT=8001 go run main.go
 
 # Create a new branch
 create-branch:

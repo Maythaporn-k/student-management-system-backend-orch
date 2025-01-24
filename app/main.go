@@ -9,7 +9,7 @@ import (
 )
 
 func indexHandler(c *fiber.Ctx) error {
-	return c.SendString("Hello, World!")
+	return c.SendString("This is student management service (orch)")
 }
 
 func main() {
@@ -36,9 +36,11 @@ func main() {
 	app.Put("/orch/edit-user", handlers.EditUser)
 
 	// Start the server
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080" // Default to 8080 if PORT is not set
 	}
+
 	app.Listen(":" + port)
 }

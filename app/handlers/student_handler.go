@@ -6,6 +6,7 @@ import (
 	"net/http"
 )
 
+// const coreBaseURL = "http://localhost:8002" // Core service URL
 const coreBaseURL = "http://localhost:8002" // Core service URL
 
 func sendRequestToCoreValidate(method, endpoint string, body io.Reader) (*http.Response, error) {
