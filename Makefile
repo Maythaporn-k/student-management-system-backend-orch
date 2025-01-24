@@ -1,10 +1,10 @@
 # Targets
-.PHONY: orch core create-branch create-branch-from-main perf-test
+.PHONY: orch  create-branch create-branch-from-main
 
 # Run the Orchestrator service
 orch:
 	@echo "Running Orchestrator service on branch $(GIT_BRANCH)"
-	cd orch && go run main.go
+	cd app && go run main.go
 
 # Create a new branch
 create-branch:
