@@ -23,7 +23,7 @@ func main() {
 
 	// Middleware
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000,https://maythaporn-k.github.io/student-management-system-fronted/home",
+		AllowOrigins: "http://localhost:3000,https://maythaporn-k.github.io",
 		AllowMethods: "GET,POST,PUT,DELETE",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
